@@ -1,0 +1,362 @@
+body {
+	direction: rtl;
+	-webkit-font-smoothing: antialiased;
+	font-family: "David Libre", serif;
+	margin: 0;
+	color: #333;
+	height: 2000px;
+	overflow-x: hidden;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0; right: 0;
+	text-align: center;
+}
+
+.header h1 {
+	font-size: 1.2em;
+	letter-spacing: 0.2em;
+	font-weight: 500;
+}
+
+.calendar-page {
+	position: absolute;
+	width: 160px;
+	text-align: center;
+	background-color: white;
+	box-shadow: 0.3em 0.3em 2em #999;
+	top: 10vh; left: 20vw;
+	transform: rotate(-3deg);
+}
+
+.calendar-page .month {
+	font-size: 2em;
+	line-height: 1;
+	padding-top: 0.5em;
+}
+
+.calendar-page .day {
+	font-size: 6em;
+	line-height: 1;
+}
+
+.calendar-page .year {
+	font-size: 2em;
+	line-height: 0.9;
+}
+
+.calendar-page .week-day {
+	font-size: 1.2em;
+	line-height: 1.4;
+	background-color: #eda5a5;
+	color: white;
+	margin: 0.5em 0 0;
+}
+
+.notepad {
+	width: 200px;
+	border-top: 10px dotted #fffc45;
+	position: absolute;
+	top: 40vh;
+	right: 20vw;
+	transform: rotate(2deg);
+	box-shadow: 0.3em 0.8em 1em #ddd;
+}
+
+.notepad ul {
+	height: 230px;
+	background-color: #fffc45;
+	background-image: repeating-linear-gradient( transparent 0px, transparent 29px, #888 30px );
+	padding: 0;
+	list-style: none;
+	padding: 2.5em 0.6em 0 0;
+	margin: -0.2em 0 0;
+}
+
+.notepad ul li {
+	line-height: 30px;
+}
+
+.envelope {
+	width: 50vw;
+	height: 200px;
+	min-width: 200px;
+	background-color: white;
+	box-shadow: 0.3em 0.3em 2em #999;	
+	position: absolute;
+	top: 70vh; left: 20vw;
+	transform: rotate(-7deg);
+}
+
+.envelope .stamp {
+	position: absolute;
+	top: 10px; right: 10px;
+	width: 40px; height: 40px;
+	border: 4px dotted #ddd;
+}
+
+.envelope .stamp-content {
+	background-color: #ddd;
+	height: 44px;
+	margin: -2px;
+	color: white;
+	font-size: 2.5em;
+	line-height: 1.1;
+	text-align: center;
+	font-weight: 500;
+}
+
+.envelope .address {
+	position: absolute;
+	top: 50px; right: 30%;
+	line-height: 1.4;
+}
+
+.magnifier {
+	position: absolute;
+	top: 70vh; left: 45vw;	
+	transform: rotate(50deg);
+}
+
+.magnifier .glass {
+	width: 200px; height: 200px;
+	border-radius: 200px;
+	background-color: rgba( 240, 240, 240, 0.5 );
+	border: 10px solid black;
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 100;
+}
+
+.magnifier .handle {
+	width: 30px; height: 200px;
+	background-image: linear-gradient( 270deg, black, #999 );
+	position: absolute;
+	top: 210px; left: 95px;
+	box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.6);
+}
+
+.business-card {
+	position: absolute;
+	top: 140vh; right: 30vw;
+	background-color: #fbf8f8;
+	box-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 0.2);
+	width: 50%;
+	max-width: 240px;
+	padding: 1em 1em 1.5em;
+	transition: transform 250ms;
+	z-index: 200;
+}
+
+.business-card:hover {
+	cursor: -webkit-grab;
+	transform: perspective(1000px) scale(1.2) rotateZ(4deg) rotateY(25deg);
+}
+
+.business-card:active {
+	cursor: -webkit-grabbing;
+	transform: perspective(1000px) scale(1.1) rotateZ(10deg) rotateY(180deg);
+}
+
+.business-card p {
+	margin: 0;
+	line-height: 1.3;
+}
+
+.business-card p.name {
+	font-weight: bold;
+	font-size: 1.4em;
+	line-height: 1.1;
+}
+
+.business-card p.title {
+	border-bottom: 1px solid #ddd;
+	margin: 0.2em 0;
+	padding: 0 0 0.4em;
+	color: #429fe5;
+}
+
+.business-card p.phone,
+.business-card p.email {
+	font-size: 0.8em;
+	text-align: left;
+	color: #888;
+}
+
+.iphone {
+	position: absolute;
+	top: 140vh; left: 15vw;
+	width: 60%; height: 460px;
+	max-width: 280px;
+	background-color: black;
+	border-radius: 1em;
+	box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.6);
+	transform: rotate(-8deg);
+}
+
+.iphone .screen {
+	position: absolute;
+	top: 50px; left: 1em; right: 1em; height: 344px;
+	background-color: white;
+}
+
+.iphone .screen iframe {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	width: 100%;
+	height: 340px;
+}
+
+.iphone .button {
+	position: absolute;
+	bottom: 15px; left: 50%;
+	margin-left: -20px;
+	width: 40px; height: 40px;
+	border: 1px solid #888;
+	border-radius: 40px;
+}
+
+.watch {
+	position: absolute;
+	top: 180vh; right: 25vw;	
+	transform: rotate(5deg);
+}
+
+.watch-strap {
+	width: 60px;
+	height: 500px;
+	background-color: black;
+	position: absolute;
+	top: 0; left: 0;
+	border-radius: 1em;
+	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+}
+
+.watch-strap-clasp {
+	width: 52px;
+	height: 52px;
+	border: 4px solid #c0c0c0;
+	border-radius: 1em 1em 0px 0px;
+	position: absolute;
+	top: -20px;
+}
+
+.watch-strap-hook {
+	width: 0; height: 40px;
+	border-left: 4px solid #c0c0c0;
+	position: absolute;
+	bottom: 0; left: 25px;
+}
+
+.watch-strap-holes {
+	position: absolute;
+	width: 0; height: 130px;
+	left: 28px; top: 350px;
+	border-left: 5px dotted white;
+}
+
+.watch-face {
+	width: 100px; height: 100px;
+	background-color: white;
+	border: 10px solid black;
+	border-radius: 100px;
+	position: absolute;
+	top: 200px; left: -30px;
+	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+}
+
+.watch-hand-hours {
+	width: 4px; height: 20px;
+	background-color: black;
+	position: absolute;
+	top: 50px; left: 50px;
+	transform-origin: top center;
+	transform: rotate(45deg);
+}
+
+.watch-hand-minutes {
+	width: 2px; height: 35px;
+	background-color: black;
+	position: absolute;
+	top: 50px; left: 50px;
+	transform-origin: top center;
+	transform: rotate(-20deg);
+}
+
+.watch-hand-seconds {
+	width: 1px; height: 40px;
+	background-color: red;
+	position: absolute;
+	top: 50px; left: 50px;
+	transform-origin: top center;
+	transform: rotate(-20deg);
+	animation-name: watch-hand-seconds-move;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes watch-hand-seconds-move {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.polaroids {
+	position: absolute;
+	top: 280vh; left: 60vw;
+	transform: rotate(3deg);
+}
+
+.polaroid {
+	position: absolute;
+	max-width: 300px;
+	width: 50vw;
+	background-color: white;
+	padding: 1em 1em 4em;
+	box-sizing: border-box;
+	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.polaroid.two {
+	transform: rotate(3deg) translate(40px, -60px);
+}
+
+.polaroid.three {
+	transform: rotate(-3deg) translate(-20px, 30px);
+}
+
+.polaroid.four {
+	transform: rotate(6deg) translate(40px, 0);
+}
+
+.polaroid.five {
+	transform: rotate(-8deg) translate(40px, 60px);
+}
+
+.polaroid.six {
+	transform: rotate(12deg) translate(20px, 30px);
+}
+
+.polaroid:hover {
+	z-index: 200;
+}
+
+.polaroid img {
+	display: block;
+	width: 100%;
+}
+
+.footer {
+	position: absolute;
+	top: 400vh; left: 0; right: 0;
+	text-align: center;
+	font-size: 0.8em;
+	letter-spacing: 0.05em;
+}
