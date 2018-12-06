@@ -6,6 +6,7 @@ body {
 	color: #333;
 	height: 2000px;
 	overflow-x: hidden;
+	background-image: url( "wood.jpg" );
 }
 
 .header {
@@ -26,8 +27,8 @@ body {
 	width: 160px;
 	text-align: center;
 	background-color: white;
-	box-shadow: 0.3em 0.3em 2em #999;
-	top: 10vh; left: 20vw;
+	box-shadow: 0.3em 0.3em 2em rgba( 0, 0, 0, 0.5 );
+	top: 100px; left: 20vw;
 	transform: rotate(-3deg);
 }
 
@@ -57,12 +58,12 @@ body {
 
 .notepad {
 	width: 200px;
-	border-top: 10px dotted #fffc45;
+	border-top: 15px dotted #fffc45;
 	position: absolute;
-	top: 40vh;
+	top: 300px;
 	right: 20vw;
 	transform: rotate(2deg);
-	box-shadow: 0.3em 0.8em 1em #ddd;
+	box-shadow: 0.3em 0.8em 1em rgba( 0, 0, 0, 0.5 );;
 }
 
 .notepad ul {
@@ -72,7 +73,7 @@ body {
 	padding: 0;
 	list-style: none;
 	padding: 2.5em 0.6em 0 0;
-	margin: -0.2em 0 0;
+	margin: -0.5em 0 0;
 }
 
 .notepad ul li {
@@ -83,10 +84,11 @@ body {
 	width: 50vw;
 	height: 200px;
 	min-width: 200px;
+	max-width: 500px;
 	background-color: white;
-	box-shadow: 0.3em 0.3em 2em #999;	
+	box-shadow: 0.3em 0.3em 2em rgba( 0, 0, 0, 0.5 );	
 	position: absolute;
-	top: 70vh; left: 20vw;
+	top: 500px; left: 30vw;
 	transform: rotate(-7deg);
 }
 
@@ -116,7 +118,7 @@ body {
 
 .magnifier {
 	position: absolute;
-	top: 70vh; left: 45vw;	
+	top: 500px; left: 45vw;	
 	transform: rotate(50deg);
 }
 
@@ -140,7 +142,7 @@ body {
 
 .business-card {
 	position: absolute;
-	top: 140vh; right: 30vw;
+	top: 800px; right: 30vw;
 	background-color: #fbf8f8;
 	box-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 0.2);
 	width: 50%;
@@ -187,7 +189,7 @@ body {
 
 .iphone {
 	position: absolute;
-	top: 140vh; left: 15vw;
+	top: 900px; left: 15vw;
 	width: 60%; height: 460px;
 	max-width: 280px;
 	background-color: black;
@@ -220,7 +222,7 @@ body {
 
 .watch {
 	position: absolute;
-	top: 180vh; right: 25vw;	
+	top: 1200px; right: 25vw;	
 	transform: rotate(5deg);
 }
 
@@ -309,7 +311,7 @@ body {
 
 .polaroids {
 	position: absolute;
-	top: 280vh; left: 60vw;
+	top: 1600px; left: 60vw;
 	transform: rotate(3deg);
 }
 
@@ -355,7 +357,7 @@ body {
 
 .footer {
 	position: absolute;
-	top: 400vh; left: 0; right: 0;
+	top: 2100px; left: 0; right: 0;
 	text-align: center;
 	font-size: 0.8em;
 	letter-spacing: 0.05em;
