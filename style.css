@@ -1,41 +1,64 @@
+
+/**** BODY ****/
+
 body {
 	direction: rtl;
-	-webkit-font-smoothing: antialiased;
+
+	overflow-x: hidden;  /* Disables scrolling the page horizontally */
+
 	font-family: "David Libre", serif;
-	margin: 0;
-	color: #333;
-	height: 2000px;
-	overflow-x: hidden;
+	
+	color: #333; /* Makes the text a bit brighter than black - takes the contrast down a bit */
 	background-image: url( "wood.jpg" );
+
+	-webkit-font-smoothing: antialiased;  /* Makes fonts look better on Mac Safari & Chrome */
+	-moz-osx-font-smoothing: grayscale;   /* Makes fonts look better on Mac Firefox */
 }
 
+
+/**** HEADER ****/
+
 .header {
-	position: fixed;
+	position: fixed;  /* Make the element stay in its position, regardless of scroll */
 	top: 0;
-	left: 0; right: 0;
+	left: 0;
+	right: 0;
+	
 	text-align: center;
 }
 
-.header h1 {
-	font-size: 1.2em;
+/* Here we set the typography for the header, just for the <h1> tag inside it: */
+
+.header h1 {  
+	font-size: 1.2em; /* We're using em units for the fonts */
 	letter-spacing: 0.2em;
 	font-weight: 500;
 }
 
+
+/**** CALENDAR ****/
+
 .calendar-page {
+	/* We're using rem units (em units relative to body) for all the constant dimensions */
+	width: 10rem;  /* No height, so element will be as long as its contents */
+
 	position: absolute;
-	width: 160px;
+	top: 6.5rem;
+	left: 20vw;	 /* We're using vw (1/100 of viewport width) for most of the relative dimensions */
+	
 	text-align: center;
+	
 	background-color: white;
-	box-shadow: 0.3em 0.3em 2em rgba( 0, 0, 0, 0.5 );
-	top: 100px; left: 20vw;
-	transform: rotate(-3deg);
+
+	box-shadow: 0.3rem 0.3rem 2rem rgba(0, 0, 0, 0.5);  /* Drop shadow: [X-position] [Y-position] [size] [color] */
+	transform: rotate(-3deg); /* Rotate calendar page 3 degrees counter-clockwise */
 }
 
 .calendar-page .month {
+	padding-top: 0.5rem;
+
 	font-size: 2em;
 	line-height: 1;
-	padding-top: 0.5em;
 }
 
 .calendar-page .day {
@@ -49,121 +72,167 @@ body {
 }
 
 .calendar-page .week-day {
+	margin: 0.5rem 0 0;
+
 	font-size: 1.2em;
 	line-height: 1.4;
-	background-color: #eda5a5;
+
 	color: white;
-	margin: 0.5em 0 0;
+	background-color: #eda5a5;
 }
 
+
+/**** NOTEPAD ****/
+
 .notepad {
-	width: 200px;
-	border-top: 15px dotted #fffc45;
+	width: 12.5rem;
+	border-top: 1rem dotted #fffc45;
+	
 	position: absolute;
-	top: 300px;
+	top: 18rem;
 	right: 20vw;
-	transform: rotate(2deg);
-	box-shadow: 0.3em 0.8em 1em rgba( 0, 0, 0, 0.5 );;
+	
+	box-shadow: 0.3rem 0.8rem 1rem rgba( 0, 0, 0, 0.5 );
+	transform: rotate(2deg); /* Rotate 2 degrees clockwise */
 }
 
 .notepad ul {
-	height: 230px;
-	background-color: #fffc45;
-	background-image: repeating-linear-gradient( transparent 0px, transparent 29px, #888 30px );
-	padding: 0;
-	list-style: none;
-	padding: 2.5em 0.6em 0 0;
-	margin: -0.5em 0 0;
+	height: 14rem;
+
+	margin: -0.5rem 0 0;
+	padding: 2.6rem 0.6rem 0 0;
+	list-style: none; /* Get rid of the list bullets */
+
+	line-height: 2rem; /* Each notepad "row" will be 2 rem units high - we will syncronize this with the background in the next line */
+
+	background-image: repeating-linear-gradient( #fffc45 0px, #fffc45 1.9rem, #888 2rem ); /* Repeating gradient for notepad rules */
 }
 
-.notepad ul li {
-	line-height: 30px;
-}
+
+/**** ENVELOPE ****/
 
 .envelope {
-	width: 50vw;
-	height: 200px;
-	min-width: 200px;
-	max-width: 500px;
-	background-color: white;
-	box-shadow: 0.3em 0.3em 2em rgba( 0, 0, 0, 0.5 );	
+	width: 50vw; /* Make the envelope _ideally_ take half the width of the screen */
+	min-width: 12.5rem; /* Don't let envelope get too narrow... */
+	max-width: 30rem; /* ...but don't let it get too wide, either */
+	height: 12.5rem;
+
 	position: absolute;
-	top: 500px; left: 30vw;
+	top: 32rem;
+	left: 30vw;
+
+	background-color: white;
+	
+	box-shadow: 0.3rem 0.3rem 2rem rgba( 0, 0, 0, 0.5 );	
 	transform: rotate(-7deg);
 }
 
 .envelope .stamp {
+	width: 2.5em; 
+	height: 2.5em;
+
 	position: absolute;
-	top: 10px; right: 10px;
-	width: 40px; height: 40px;
-	border: 4px dotted #ddd;
+	top: 0.75rem; 
+	right: 0.75rem;
+
+	border: 0.25rem dotted #ddd;
 }
 
 .envelope .stamp-content {
-	background-color: #ddd;
-	height: 44px;
-	margin: -2px;
-	color: white;
+	height: 2.75rem;
+
+	margin: -0.125rem;
+
 	font-size: 2.5em;
+	font-weight: 500;
 	line-height: 1.1;
 	text-align: center;
-	font-weight: 500;
+
+	color: white;
+	background-color: #ddd;
 }
 
 .envelope .address {
 	position: absolute;
-	top: 50px; right: 30%;
+	top: 3rem; 
+	right: 30%;
+	
 	line-height: 1.4;
 }
 
+
+/**** MAGNIFIER ****/
+
 .magnifier {
 	position: absolute;
-	top: 500px; left: 45vw;	
+	top: 30rem; 
+	left: 45vw;	
+	
 	transform: rotate(50deg);
 }
 
 .magnifier .glass {
-	width: 200px; height: 200px;
-	border-radius: 200px;
-	background-color: rgba( 240, 240, 240, 0.5 );
-	border: 10px solid black;
+	width: 12.5rem; 
+	height: 12.5rem;
+
 	position: absolute;
-	top: 0; left: 0;
-	z-index: 100;
+	top: 0; 
+	left: 0;
+	z-index: 100; /* Make sure the magnifier glass is in front of the handle */
+	
+	border: 0.7rem solid black;
+	border-radius: 12.5rem;
+	
+	background-color: rgba( 240, 240, 240, 0.5 );	
 }
 
 .magnifier .handle {
-	width: 30px; height: 200px;
-	background-image: linear-gradient( 270deg, black, #999 );
+	width: 1.8rem; 
+	height: 12.5rem;
+
 	position: absolute;
-	top: 210px; left: 95px;
-	box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.6);
+	top: 13.5rem; 
+	left: 6rem;
+	
+	background-image: linear-gradient( 270deg, black, #999 );
+	
+	box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.6);
 }
+
+
+/**** BUSINESS CARD ****/
 
 .business-card {
-	position: absolute;
-	top: 800px; right: 30vw;
-	background-color: #fbf8f8;
-	box-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 0.2);
 	width: 50%;
-	max-width: 240px;
-	padding: 1em 1em 1.5em;
-	transition: transform 250ms;
+	max-width: 15rem;
+
+	position: absolute;
+	top: 50rem; 
+	right: 30vw;
 	z-index: 200;
+
+	padding: 1rem 1rem 1.5rem;
+	
+	background-color: #fbf8f8;
+	
+	box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.2);
+	
+	transition: transform 250ms; /* Enable the "transform" property to transition for 1/4 second */
 }
 
-.business-card:hover {
-	cursor: -webkit-grab;
+.business-card:hover { /* The :hover modifier refers to when the mouse cursor is over the element */
+	cursor: -webkit-grab; /* Show a stretched hand cursor (on chrome) */
 	transform: perspective(1000px) scale(1.2) rotateZ(4deg) rotateY(25deg);
 }
 
-.business-card:active {
-	cursor: -webkit-grabbing;
+.business-card:active { /* The :active modifier refers to when the user holds the mouse button when over the element */
+	cursor: -webkit-grabbing; /* Show a grabbing hand cursor (on chrome) */
 	transform: perspective(1000px) scale(1.1) rotateZ(10deg) rotateY(180deg);
 }
 
 .business-card p {
 	margin: 0;
+	
 	line-height: 1.3;
 }
 
@@ -174,9 +243,10 @@ body {
 }
 
 .business-card p.title {
+	margin: 0.2rem 0;
 	border-bottom: 1px solid #ddd;
-	margin: 0.2em 0;
-	padding: 0 0 0.4em;
+	padding: 0 0 0.4rem;
+	
 	color: #429fe5;
 }
 
@@ -184,170 +254,240 @@ body {
 .business-card p.email {
 	font-size: 0.8em;
 	text-align: left;
+	
 	color: #888;
 }
 
+
+/**** IPHONE ****/
+
 .iphone {
+	width: 60vw; 
+	max-width: 17.5rem;
+	height: 460px;
+	
 	position: absolute;
-	top: 900px; left: 15vw;
-	width: 60%; height: 460px;
-	max-width: 280px;
+	top: 56rem; 
+	left: 15vw;
+	
 	background-color: black;
-	border-radius: 1em;
-	box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.6);
+	
+	border-radius: 1rem;
+	box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.6);
 	transform: rotate(-8deg);
 }
 
 .iphone .screen {
+	height: 21.5rem;
+
 	position: absolute;
-	top: 50px; left: 1em; right: 1em; height: 344px;
+	top: 3rem; 
+	left: 1rem;
+	right: 1rem; 
+	
 	background-color: white;
 }
 
 .iphone .screen iframe {
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
 	width: 100%;
-	height: 340px;
+	height: 21.5rem;
+
+	border: none; /* Cancel the default border */
+	
 }
 
 .iphone .button {
+	width: 2.5rem; 
+	height: 2.5rem;
+
 	position: absolute;
-	bottom: 15px; left: 50%;
-	margin-left: -20px;
-	width: 40px; height: 40px;
+	bottom: 0.95rem; 
+	left: 50%;
+	
+	margin-left: -1.25rem;
 	border: 1px solid #888;
-	border-radius: 40px;
+	
+	border-radius: 2.5rem;
 }
+
+/**** WATCH ****/
 
 .watch {
 	position: absolute;
-	top: 1200px; right: 25vw;	
+	top: 75rem; 
+	right: 25vw;
+	
 	transform: rotate(5deg);
 }
 
 .watch-strap {
-	width: 60px;
-	height: 500px;
-	background-color: black;
+	width: 3.75em;
+	height: 32rem;
+
 	position: absolute;
-	top: 0; left: 0;
-	border-radius: 1em;
-	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+	top: 0; 
+	left: 0;
+	
+	background-color: black;
+	
+	border-radius: 1rem;
+	box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .watch-strap-clasp {
-	width: 52px;
-	height: 52px;
-	border: 4px solid #c0c0c0;
-	border-radius: 1em 1em 0px 0px;
+	width: 3.25rem;
+	height: 3.25rem;
+
 	position: absolute;
-	top: -20px;
+	top: -1rem;
+	
+	border: 0.25rem solid #c0c0c0;
+	
+	border-radius: 1rem 1rem 0 0;
+	box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .watch-strap-hook {
-	width: 0; height: 40px;
-	border-left: 4px solid #c0c0c0;
+	width: 0; 
+	height: 2.5rem;
+
 	position: absolute;
-	bottom: 0; left: 25px;
+	bottom: 0; left: 1.5rem;
+	
+	border-left: 0.25rem solid #c0c0c0;	
 }
 
 .watch-strap-holes {
+	width: 0; 
+	height: 8rem;
+
 	position: absolute;
-	width: 0; height: 130px;
-	left: 28px; top: 350px;
-	border-left: 5px dotted white;
+	left: 1.6rem; 
+	top: 22rem;
+	
+	border-left: 0.5rem dotted white;
 }
 
 .watch-face {
-	width: 100px; height: 100px;
-	background-color: white;
-	border: 10px solid black;
-	border-radius: 100px;
+	width: 6.5rem; 
+	height: 6.5rem;
+
 	position: absolute;
-	top: 200px; left: -30px;
-	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+	top: 12.5rem; 
+	left: -2.25rem;
+
+	border: 0.75rem solid black;
+	
+	background-color: white;
+	
+	border-radius: 6.5rem;
+	box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .watch-hand-hours {
-	width: 4px; height: 20px;
-	background-color: black;
+	width: 0.25rem; 
+	height: 1.75rem;
+
 	position: absolute;
-	top: 50px; left: 50px;
-	transform-origin: top center;
+	top: 3.25rem; 
+	left: 3.25rem;
+	
+	background-color: black;
+	
+	transform-origin: top center; /* tells transform where the center of the rotation will be */
 	transform: rotate(45deg);
 }
 
 .watch-hand-minutes {
-	width: 2px; height: 35px;
-	background-color: black;
+	width: 0.125rem; 
+	height: 2.5rem;
+
 	position: absolute;
-	top: 50px; left: 50px;
+	top: 3.25rem; 
+	left: 3.25rem;
+	
+	background-color: black;
+	
 	transform-origin: top center;
 	transform: rotate(-20deg);
 }
 
 .watch-hand-seconds {
-	width: 1px; height: 40px;
-	background-color: red;
+	width: 1px; 
+	height: 2.75rem;
+
 	position: absolute;
-	top: 50px; left: 50px;
+	top: 3.25rem; 
+	left: 3.25rem;
+	
+	background-color: red;
+	
 	transform-origin: top center;
 	transform: rotate(-20deg);
-	animation-name: watch-hand-seconds-move;
+	
+	animation-name: watch-hand-seconds-move; /* see @keyframes below */
 	animation-duration: 60s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function: linear; /* if we don't set this to linear, the animation's tween will be eased */
 }
 
-@keyframes watch-hand-seconds-move {
+@keyframes watch-hand-seconds-move { /* This defines the animation we're calling using animation-name (see .watch-hand-seconds above) */
 	0% {
-		transform: rotate(0deg);
+		transform: rotate(0deg); /* In the beginning we want it to be rotated to 0 degrees */
 	}
 	100% {
-		transform: rotate(360deg);
+		transform: rotate(360deg); /* In the end - 360 degrees (back to where it started) */
 	}
 }
+
+/**** POLAROIDS ****/
 
 .polaroids {
 	position: absolute;
-	top: 1600px; left: 60vw;
+	top: 100rem; 
+	left: 60vw;
+	
 	transform: rotate(3deg);
 }
 
 .polaroid {
-	position: absolute;
-	max-width: 300px;
+	box-sizing: border-box; /* This includes the padding in the overall width */
+
 	width: 50vw;
+	max-width: 18rem;
+	
+	position: absolute; /* We define the top/left for each polaroid individually, see next rules */
+
+	padding: 1rem 1rem 4rem;
+	
 	background-color: white;
-	padding: 1em 1em 4em;
-	box-sizing: border-box;
-	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-	cursor: pointer;
+	
+	cursor: pointer; /* This makes the mouse cursor look like a pointing hand */
+	box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .polaroid.two {
-	transform: rotate(3deg) translate(40px, -60px);
+	transform: rotate(3deg) translate(2.5rem, -3.75rem);
 }
 
 .polaroid.three {
-	transform: rotate(-3deg) translate(-20px, 30px);
+	transform: rotate(-3deg) translate(-1.25rem, 2rem);
 }
 
 .polaroid.four {
-	transform: rotate(6deg) translate(40px, 0);
+	transform: rotate(6deg) translate(2.5rem, 0);
 }
 
 .polaroid.five {
-	transform: rotate(-8deg) translate(40px, 60px);
+	transform: rotate(-8deg) translate(2.5rem, 3.75rem);
 }
 
 .polaroid.six {
-	transform: rotate(12deg) translate(20px, 30px);
+	transform: rotate(12deg) translate(1.25rem, 2rem);
 }
 
-.polaroid:hover {
-	z-index: 200;
+.polaroid:hover { /* Each polaroid has the .polaroid class, but only one has the mouse cursor over at a time */
+	z-index: 200; /* Bring the polaroid to the front */
 }
 
 .polaroid img {
@@ -357,8 +497,13 @@ body {
 
 .footer {
 	position: absolute;
-	top: 2100px; left: 0; right: 0;
-	text-align: center;
+	top: 130rem; 
+	left: 0; 
+	right: 0;
+	
+	margin: 1rem 0;
+
 	font-size: 0.8em;
 	letter-spacing: 0.05em;
+	text-align: center;
 }
