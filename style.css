@@ -1,4 +1,10 @@
 
+@font-face {
+	font-family: "Petel";
+	font-weight: bold;
+	src: url( "Petel-Bold.woff2" ) format( "woff2" ), url( "Petel-Bold.woff" ) format( "woff" );
+}
+
 /**** BODY ****/
 
 body {
@@ -103,8 +109,11 @@ body {
 	padding: 2.6rem 0.6rem 0 0;
 	list-style: none; /* Get rid of the list bullets */
 
+	font-family: "Petel";
+	font-size: 1.3em;
 	line-height: 2rem; /* Each notepad "row" will be 2 rem units high - we will syncronize this with the background in the next line */
 
+	color: #555;
 	background-image: repeating-linear-gradient( #fffc45 0px, #fffc45 1.9rem, #888 2rem ); /* Repeating gradient for notepad rules */
 }
 
@@ -154,10 +163,12 @@ body {
 
 .envelope .address {
 	position: absolute;
-	top: 3rem; 
+	top: 2.5rem; 
 	right: 30%;
 	
-	line-height: 1.4;
+	font-family: "Petel";
+	font-size: 1.5em;
+	line-height: 1;
 }
 
 
